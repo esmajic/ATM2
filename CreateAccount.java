@@ -1,27 +1,27 @@
 import java.util.ArrayList;
 
-public class KreiranjeRacuna {
+public class CreateAccount {
 
-	ArrayList<Racun> lista = new ArrayList<>();
+	ArrayList<Account> lista = new ArrayList<>();
 
-	public KreiranjeRacuna() {
+	public CreateAccount() {
 
 	}
 
-	public void kreiratiRacun(ArrayList<Racun> lista) {
+	public void kreiratiRacun(ArrayList<Account> lista) {
 
 		System.out.println("");
 		System.out.println("Kreiranje bankovnog racuna...");
 		System.out.println("");
 		// System.out.println("Unesite neki petocifreni broj: ");
 		int brojRacuna = (int) (Math.random() * 100000) + 1;
-		MainBankomat.input.nextLine();
+		MainATM.input.nextLine();
 		System.out.println("Unesite ime vlasnika racuna:  ");
-		String vlasnikRacuna = MainBankomat.input.nextLine();
+		String vlasnikRacuna = MainATM.input.nextLine();
 		System.out.println("Unesite saldo racuna:  ");
-		double stanjeRacuna = MainBankomat.input.nextDouble();
+		double stanjeRacuna = MainATM.input.nextDouble();
 
-		Racun racuni = new Racun(brojRacuna, vlasnikRacuna, stanjeRacuna);
+		Account racuni = new Account(brojRacuna, vlasnikRacuna, stanjeRacuna);
 
 		lista.add(racuni);
 

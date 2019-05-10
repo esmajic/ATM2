@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public class OperacijeSaRacunom {
+public class AccountHandling {
 
-	public OperacijeSaRacunom() {
+	public AccountHandling() {
 
 	}
 
-	public boolean saldoNegativan(ArrayList<Racun> lista, int brojRacuna) {
+	public boolean saldoNegativan(ArrayList<Account> lista, int brojRacuna) {
 		if (lista.get(indexRacuna(lista, brojRacuna)).getStanjeRacuna() < 0) {
 			return true;
 		}
@@ -14,7 +14,7 @@ public class OperacijeSaRacunom {
 
 	}
 
-	public boolean brojRacunaNepostojeci(ArrayList<Racun> lista, int brojRacuna) {
+	public boolean brojRacunaNepostojeci(ArrayList<Account> lista, int brojRacuna) {
 		for (int i = 0; i < lista.size(); i++) {
 			if (lista.get(i).getBrojRacuna() == brojRacuna) {
 				return false;
@@ -24,7 +24,7 @@ public class OperacijeSaRacunom {
 
 	}
 
-	public int indexRacuna(ArrayList<Racun> lista, int brojRacuna) {
+	public int indexRacuna(ArrayList<Account> lista, int brojRacuna) {
 		int i = 0;
 		for (i = 0; i < lista.size(); i++) {
 			if (lista.get(i).getBrojRacuna() == brojRacuna) {
@@ -34,7 +34,7 @@ public class OperacijeSaRacunom {
 		return i;
 	}
 
-	public boolean nedovoljnoSrestava(ArrayList<Racun> lista, int brojRacuna, double iznos) {
+	public boolean nedovoljnoSrestava(ArrayList<Account> lista, int brojRacuna, double iznos) {
 		if ((lista.get(indexRacuna(lista, brojRacuna)).getStanjeRacuna() - iznos) < 0) {
 			return true;
 		}

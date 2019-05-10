@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MainBankomat {
+public class MainATM {
 
 	public static Scanner input = new Scanner(System.in);
 
@@ -9,7 +9,7 @@ public class MainBankomat {
 
 		Scanner input = new Scanner(System.in);
 
-		ArrayList<Racun> lista = new ArrayList<>();
+		ArrayList<Account> lista = new ArrayList<>();
 
 		int brojRacuna, uplatniRacun, isplatniRacun;
 		int option;
@@ -33,7 +33,7 @@ public class MainBankomat {
 			option = input.nextInt();
 
 			if (option == 1) {
-				KreiranjeRacuna racun = new KreiranjeRacuna();
+				CreateAccount racun = new CreateAccount();
 
 				racun.kreiratiRacun(lista);
 
@@ -47,7 +47,7 @@ public class MainBankomat {
 				System.out.println("Unesite iznos za prijenos:  ");
 				iznos = input.nextDouble();
 
-				PrijenosNovca transfer = new PrijenosNovca();
+				MoneyTransfer transfer = new MoneyTransfer();
 
 				transfer.transferNovca(isplatniRacun, uplatniRacun, iznos, lista);
 
@@ -57,13 +57,13 @@ public class MainBankomat {
 				System.out.println("Unesite postojeci broj racuna: ");
 				brojRacuna = input.nextInt();
 
-				ListingRacuna status = new ListingRacuna();
+				ListAccounts status = new ListAccounts();
 
 				status.izlistavanjeDetalja(lista, brojRacuna);
 				System.out.println();
 
 			} else if (option == 4) {
-				ListingRacuna print = new ListingRacuna();
+				ListAccounts print = new ListAccounts();
 
 				print.ispisPostojecihRacuna(lista);
 			}

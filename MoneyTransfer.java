@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
-public class PrijenosNovca {
+public class MoneyTransfer {
 
-	public PrijenosNovca() {
+	public MoneyTransfer() {
 
 	}
 
-	public void transferNovca(int isplatniRacun, int uplatniRacun, double iznos, ArrayList<Racun> lista) {
+	public void transferNovca(int isplatniRacun, int uplatniRacun, double iznos, ArrayList<Account> lista) {
 
-		OperacijeSaRacunom handling = new OperacijeSaRacunom();
+		AccountHandling handling = new AccountHandling();
 
 		if (lista.size() < 1) {
 			System.out.println("Nema kreiranih racuna!");

@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
-public class ListingRacuna {
+public class ListAccounts {
 
-	public ListingRacuna() {
+	public ListAccounts() {
 
 	}
 
-	public void izlistavanjeDetalja(ArrayList<Racun> lista, int brojRacuna) {
+	public void izlistavanjeDetalja(ArrayList<Account> lista, int brojRacuna) {
 
-		OperacijeSaRacunom ops = new OperacijeSaRacunom();
+		AccountHandling ops = new AccountHandling();
 
 		if (lista.size() < 1) {
 			System.out.println("Nema kreiranih racuna. Kreirajte racun.");
@@ -29,7 +29,7 @@ public class ListingRacuna {
 
 	}
 
-	public void ispisPostojecihRacuna(ArrayList<Racun> lista) {
+	public void ispisPostojecihRacuna(ArrayList<Account> lista) {
 		System.out.println();
 		System.out.println("Lista svih postojecih racuna: ");
 		System.out.println();

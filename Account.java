@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public class Racun {
+public class Account {
 	private int brojRacuna;
 	private String vlasnikRacuna;
 	private double stanjeRacuna;
-	ArrayList<Racun> lista = new ArrayList<>();
+	ArrayList<Account> lista = new ArrayList<>();
 
-	Racun(int brojRacuna, String vlasnikRacuna, double stanjeRacuna) {
+	Account(int brojRacuna, String vlasnikRacuna, double stanjeRacuna) {
 		this.vlasnikRacuna = vlasnikRacuna;
 		this.stanjeRacuna = stanjeRacuna;
 		this.brojRacuna = brojRacuna;
