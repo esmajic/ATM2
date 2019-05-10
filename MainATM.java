@@ -17,12 +17,11 @@ public class MainATM {
 
 		do {
 
-			System.out.println("===============================================");
+			System.out.println("\n===============================================");
 			System.out.println("=          Dobro dosli na nas Bankomat         =");
 			System.out.println("===============================================");
-			System.out.println();
 
-			System.out.println("Unesite 1 za kreiranje racuna");
+			System.out.println("\nUnesite 1 za kreiranje racuna");
 			System.out.println("Unesite 2 za prijenos novca");
 			System.out.println("Unesite 3 za provjeru statusa racuna");
 			System.out.println("Unesite 4 za ispis svih racuna");
@@ -52,15 +51,13 @@ public class MainATM {
 				transfer.transferNovca(isplatniRacun, uplatniRacun, iznos, lista);
 
 			} else if (option == 3) {
-				System.out.println("Detalji o racunu:  ");
-				System.out.println();
-				System.out.println("Unesite postojeci broj racuna: ");
+				System.out.println("\nDetalji o racunu:  ");
+				System.out.println("\nUnesite postojeci broj racuna: ");
 				brojRacuna = input.nextInt();
 
 				ListAccounts status = new ListAccounts();
 
 				status.izlistavanjeDetalja(lista, brojRacuna);
-				System.out.println();
 
 			} else if (option == 4) {
 				ListAccounts print = new ListAccounts();
@@ -70,8 +67,7 @@ public class MainATM {
 
 		} while (option != 0);
 
-		System.out.println();
-		System.out.println("Izabrali ste izlaz iz aplikacije.");
+		System.out.println("\nIzabrali ste izlaz iz aplikacije.");
 
 		input.close();
 	}

@@ -11,7 +11,6 @@ public class AccountHandling {
 			return true;
 		}
 		return false;
-
 	}
 
 	public boolean brojRacunaNepostojeci(ArrayList<Account> lista, int brojRacuna) {
@@ -21,7 +20,6 @@ public class AccountHandling {
 			}
 		}
 		return true;
-
 	}
 
 	public int indexRacuna(ArrayList<Account> lista, int brojRacuna) {

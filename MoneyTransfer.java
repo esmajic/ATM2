@@ -11,20 +11,20 @@ public class MoneyTransfer {
 		AccountHandling handling = new AccountHandling();
 
 		if (lista.size() < 1) {
-			System.out.println("Nema kreiranih racuna!");
-			System.out.println();
+			System.out.println("\nNema kreiranih racuna!");
+
 		} else if (handling.brojRacunaNepostojeci(lista, isplatniRacun)) {
-			System.out.println("Isplatni broj racuna ne postoji ili je trenutno neaktivan!");
-			System.out.println();
+			System.out.println("\nIsplatni broj racuna ne postoji ili je trenutno neaktivan!");
+
 		} else if (handling.brojRacunaNepostojeci(lista, uplatniRacun)) {
-			System.out.println("Uplatni broj racuna ne postoji ili je trenutno neaktivan!");
-			System.out.println();
+			System.out.println("\nUplatni broj racuna ne postoji ili je trenutno neaktivan!");
+
 		} else if (handling.saldoNegativan(lista, isplatniRacun)) {
-			System.out.println("Stanje na isplatnom racunu je negativno!");
-			System.out.println();
+			System.out.println("\nStanje na isplatnom racunu je negativno!");
+
 		} else if (handling.nedovoljnoSrestava(lista, isplatniRacun, iznos)) {
-			System.out.println("Nedovoljno sredstava na racunu za izvrsavanje transakcije!");
-			System.out.println();
+			System.out.println("\nNedovoljno sredstava na racunu za izvrsavanje transakcije!");
+
 		} else {
 
 			lista.get(handling.indexRacuna(lista, isplatniRacun))
@@ -32,9 +32,8 @@ public class MoneyTransfer {
 
 			lista.get(handling.indexRacuna(lista, uplatniRacun))
 					.setStanjeRacuna((lista.get(handling.indexRacuna(lista, uplatniRacun)).getStanjeRacuna()) + iznos);
-			System.out.println();
-			System.out.println("Prijenos novca je uspjesno izvrsen.");
-			System.out.println();
+			System.out.println("\nPrijenos novca je uspjesno izvrsen.");
+
 		}
 	}
 
