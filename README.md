@@ -1,4 +1,4 @@
-# ATM2
+# ATM - my second version of ATM project
 
 Write simple ATM application.
 
