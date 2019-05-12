@@ -5,7 +5,7 @@ public class MainATM {
 
 	public static Scanner input = new Scanner(System.in);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		Scanner input = new Scanner(System.in);
 
@@ -37,9 +37,8 @@ public class MainATM {
 				racun.kreiratiRacun(lista);
 
 			} else if (option == 2) {
-				System.out.println("Prijenos novacnih sredstava...");
-				System.out.println("");
-				System.out.println("Unesite racun sa kojeg placate:  ");
+				System.out.println("Opcija za prijenos novacnih sredstava...");
+				System.out.println("\nUnesite racun sa kojeg placate:  ");
 				isplatniRacun = input.nextInt();
 				System.out.println("Unesite racun na koji placate:  ");
 				uplatniRacun = input.nextInt();
@@ -70,6 +69,7 @@ public class MainATM {
 		System.out.println("\nIzabrali ste izlaz iz aplikacije.");
 
 		input.close();
+
 	}
 
 }
