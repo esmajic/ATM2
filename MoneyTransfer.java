@@ -2,13 +2,17 @@ import java.util.ArrayList;
 
 public class MoneyTransfer {
 
-	public MoneyTransfer() {
-
-	}
-
-	public void transferNovca(int isplatniRacun, int uplatniRacun, double iznos, ArrayList<Account> lista) {
+	public void transferNovca(ArrayList<Account> lista) {
 
 		AccountHandling handling = new AccountHandling();
+
+		System.out.println("Opcija za prijenos novacnih sredstava...");
+		System.out.println("\nUnesite racun sa kojeg placate:  ");
+		int isplatniRacun = MainATM.input.nextInt();
+		System.out.println("Unesite racun na koji placate:  ");
+		int uplatniRacun = MainATM.input.nextInt();
+		System.out.println("Unesite iznos za prijenos:  ");
+		double iznos = MainATM.input.nextDouble();
 
 		if (lista.size() < 1) {
 			System.out.println("\nNema kreiranih racuna!");
@@ -33,8 +37,7 @@ public class MoneyTransfer {
 			lista.get(handling.indexRacuna(lista, uplatniRacun))
 					.setStanjeRacuna((lista.get(handling.indexRacuna(lista, uplatniRacun)).getStanjeRacuna()) + iznos);
 			System.out.println("\nPrijenos novca je uspjesno izvrsen.");
-
 		}
-	}
 
+	}
 }

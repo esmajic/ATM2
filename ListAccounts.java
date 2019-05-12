@@ -1,26 +1,26 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class ListAccounts {
 
-	public ListAccounts() {
+	public void izlistavanjeDetalja(ArrayList<Account> lista) throws InputMismatchException {
 
-	}
-
-	public void izlistavanjeDetalja(ArrayList<Account> lista, int brojRacuna) {
+		System.out.println("\nIspis detalja o racunu:  ");
+		System.out.println("Unesite postojeci broj racuna: ");
+		int brojRacuna = MainATM.input.nextInt();
 
 		AccountHandling ops = new AccountHandling();
 
 		if (lista.size() < 1) {
-			System.out.println("Nema kreiranih racuna. Kreirajte racun.");
-			System.out.println();
+			System.out.println("\nNema kreiranih racuna. Kreirajte racun.");
 		} else if (ops.brojRacunaNepostojeci(lista, brojRacuna)) {
-			System.out.println("Broj racuna koji ste unijeli ne postoji. Probajte ponovo.");
-			System.out.println();
+			System.out.println("\nBroj racuna koji ste unijeli ne postoji. Probajte ponovo.");
 		} else {
-			System.out.println("Broj racuna:  " + lista.get(ops.indexRacuna(lista, brojRacuna)).getBrojRacuna());
+			System.out.println("\nBroj racuna:  " + lista.get(ops.indexRacuna(lista, brojRacuna)).getBrojRacuna());
 			System.out.println("Vlasnik racuna:  " + lista.get(ops.indexRacuna(lista, brojRacuna)).getVlasnikRacuna());
 			System.out.println("Stanje racuna:  " + lista.get(ops.indexRacuna(lista, brojRacuna)).getStanjeRacuna());
 		}
+
 	}
 
 	public void ispisPostojecihRacuna(ArrayList<Account> lista) {

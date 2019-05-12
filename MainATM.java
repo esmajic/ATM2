@@ -4,19 +4,15 @@ import java.util.Scanner;
 public class MainATM {
 
 	public static Scanner input = new Scanner(System.in);
+	public static ArrayList<Account> lista = new ArrayList<>();
 
 	public static void main(String[] args) throws Exception {
 
 		Scanner input = new Scanner(System.in);
-
-		ArrayList<Account> lista = new ArrayList<>();
-
-		int brojRacuna, uplatniRacun, isplatniRacun;
+		
 		int option;
-		double iznos;
 
 		do {
-
 			System.out.println("\n===============================================");
 			System.out.println("=          Dobro dosli na nas Bankomat         =");
 			System.out.println("===============================================");
@@ -32,31 +28,22 @@ public class MainATM {
 			option = input.nextInt();
 
 			if (option == 1) {
+
 				CreateAccount racun = new CreateAccount();
 
 				racun.kreiratiRacun(lista);
 
 			} else if (option == 2) {
-				System.out.println("Opcija za prijenos novacnih sredstava...");
-				System.out.println("\nUnesite racun sa kojeg placate:  ");
-				isplatniRacun = input.nextInt();
-				System.out.println("Unesite racun na koji placate:  ");
-				uplatniRacun = input.nextInt();
-				System.out.println("Unesite iznos za prijenos:  ");
-				iznos = input.nextDouble();
 
 				MoneyTransfer transfer = new MoneyTransfer();
 
-				transfer.transferNovca(isplatniRacun, uplatniRacun, iznos, lista);
+				transfer.transferNovca(lista);
 
 			} else if (option == 3) {
-				System.out.println("\nDetalji o racunu:  ");
-				System.out.println("\nUnesite postojeci broj racuna: ");
-				brojRacuna = input.nextInt();
 
 				ListAccounts status = new ListAccounts();
 
-				status.izlistavanjeDetalja(lista, brojRacuna);
+				status.izlistavanjeDetalja(lista);
 
 			} else if (option == 4) {
 				ListAccounts print = new ListAccounts();
@@ -66,7 +53,7 @@ public class MainATM {
 
 		} while (option != 0);
 
-		System.out.println("\nIzabrali ste izlaz iz aplikacije.");
+		System.out.println("\nIzabrali ste izlaz iz aplikacije. Dovidjenja.");
 
 		input.close();
 
